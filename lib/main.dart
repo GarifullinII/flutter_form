@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form/pages/register_form_page.dart';
 
 void main() {
   runApp(MyApp());
