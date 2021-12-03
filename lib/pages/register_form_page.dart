@@ -15,7 +15,10 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
       ),
       body: Form(child: ListView(
         padding: EdgeInsets.all(16.0), 
-        children: [],
+        children: [
+          TextField(),
+          TextFormField(),
+        ],
       )),
     );
   }
