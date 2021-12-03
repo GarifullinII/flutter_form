@@ -22,11 +22,40 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               labelText: 'Full name *',
             ),
           ),
-          SizedBox( // создаем отступ между полями
+          SizedBox(
+            // создаем отступ между полями
             height: 10.0,
           ),
           TextFormField(
             decoration: InputDecoration(labelText: 'Phone number *'),
+          ),
+          SizedBox(
+            // создаем отступ между полями
+            height: 10.0,
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Email adress'),
+          ),
+          SizedBox(
+            // создаем отступ между полями
+            height: 20.0,
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Life story'),
+          ),
+          SizedBox(
+            // создаем отступ между полями
+            height: 20.0,
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Password'),
+          ),
+          SizedBox(
+            // создаем отступ между полями
+            height: 20.0,
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Confirm password'),
           ),
         ],
       )),
