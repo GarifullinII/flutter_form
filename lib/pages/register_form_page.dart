@@ -48,14 +48,14 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 20.0,
           ),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Password'),
+            decoration: InputDecoration(labelText: 'Password *'),
           ),
           SizedBox(
             // создаем отступ между полями
             height: 20.0,
           ),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Confirm password'),
+            decoration: InputDecoration(labelText: 'Confirm password *'),
           ),
           SizedBox(
             // создаем отступ между полями
@@ -63,7 +63,9 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
           ),
           ElevatedButton(
             onPressed: () {},
-            child: Text('Submit form'),
+            child: Text(
+              'Submit form',
+            ),
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(
                 Colors.green,
