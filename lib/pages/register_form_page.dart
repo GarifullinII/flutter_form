@@ -13,11 +13,21 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
         title: Text('Register form'),
         centerTitle: true,
       ),
-      body: Form(child: ListView(
-        padding: EdgeInsets.all(16.0), 
+      body: Form(
+          child: ListView(
+        padding: EdgeInsets.all(16.0),
         children: [
-          TextField(),
-          TextFormField(),
+          TextField(
+            decoration: InputDecoration(
+              labelText: 'Full name *',
+            ),
+          ),
+          SizedBox( // создаем отступ между полями
+            height: 10.0,
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Phone number *'),
+          ),
         ],
       )),
     );
