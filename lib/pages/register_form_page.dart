@@ -57,6 +57,19 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
           TextFormField(
             decoration: InputDecoration(labelText: 'Confirm password'),
           ),
+          SizedBox(
+            // создаем отступ между полями
+            height: 10.0,
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text('Submit form'),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(
+                Colors.green,
+              ),
+            ),
+          )
         ],
       )),
     );
