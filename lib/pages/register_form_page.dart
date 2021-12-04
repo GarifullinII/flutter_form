@@ -24,6 +24,9 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               prefixIcon: Icon(
                 Icons.person,
               ), // префиксная иконка
+              suffixIcon: Icon(
+                Icons.delete_outline,
+              ), // редактирование поля, удаление
             ),
           ),
           SizedBox(
@@ -37,43 +40,47 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               prefixIcon: Icon(
                 Icons.phone,
               ),
+              suffixIcon: Icon(
+                Icons.delete_outline,
+              ),
             ),
           ),
           SizedBox(
-            // создаем отступ между полями
             height: 10.0,
           ),
           TextFormField(
             decoration: InputDecoration(
-                labelText: 'Email adress',
-                hintText: 'Add your email adress',
-                prefixIcon: Icon(
-                  Icons.email_outlined,
-                )),
+              labelText: 'Email adress',
+              hintText: 'Add your email adress',
+              prefixIcon: Icon(
+                Icons.email_outlined,
+              ),
+              suffixIcon: Icon(
+                Icons.delete_outline,
+              ),
+            ),
           ),
           SizedBox(
-            // создаем отступ между полями
             height: 20.0,
           ),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Life story'),
+            decoration: InputDecoration(
+              labelText: 'Life story',
+            ),
           ),
           SizedBox(
-            // создаем отступ между полями
             height: 20.0,
           ),
           TextFormField(
             decoration: InputDecoration(labelText: 'Password *'),
           ),
           SizedBox(
-            // создаем отступ между полями
             height: 20.0,
           ),
           TextFormField(
             decoration: InputDecoration(labelText: 'Confirm password *'),
           ),
           SizedBox(
-            // создаем отступ между полями
             height: 10.0,
           ),
           ElevatedButton(
