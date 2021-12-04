@@ -21,6 +21,9 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             decoration: InputDecoration(
               labelText: 'Full name *',
               hintText: 'Introduce youreself', // скрытый текст
+              prefixIcon: Icon(
+                Icons.person,
+              ), // префиксная иконка
             ),
           ),
           SizedBox(
