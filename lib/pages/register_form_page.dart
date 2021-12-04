@@ -65,20 +65,43 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
           ),
           TextFormField(
             decoration: InputDecoration(
-              labelText: 'Life story',
+                labelText: 'Life story',
+                hintText: 'Add your story',
+                prefixIcon: Icon(
+                  Icons.work,
+                ),
+                suffixIcon: Icon(
+                  Icons.delete_outline,
+                )),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Password *',
+              prefixIcon: Icon(
+                Icons.password,
+              ),
+              suffixIcon: Icon(
+                Icons.delete_outline,
+              ),
             ),
           ),
           SizedBox(
             height: 20.0,
           ),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Password *'),
-          ),
-          SizedBox(
-            height: 20.0,
-          ),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Confirm password *'),
+            decoration: InputDecoration(
+              labelText: 'Confirm password *',
+              hintText: 'Repead your password',
+              prefixIcon: Icon(
+                Icons.password_sharp,
+              ),
+              suffixIcon: Icon(
+                Icons.delete_outline,
+              ),
+            ),
           ),
           SizedBox(
             height: 10.0,
