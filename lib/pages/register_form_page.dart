@@ -28,20 +28,26 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 Icons.delete_outline,
                 color: Colors.red, // цвет для корзины
               ), // редактирование поля, удаление
-              enabledBorder: OutlineInputBorder( // включенная граница - появляется, когда нет фокуса на поле 
-                borderRadius: BorderRadius.all( // скругляем границы
+              enabledBorder: OutlineInputBorder(
+                // включенная граница - появляется, когда нет фокуса на поле
+                borderRadius: BorderRadius.all(
+                  // скругляем границы
                   Radius.circular(20.0),
                 ),
-                borderSide: BorderSide( // цвет рамки и толщина
+                borderSide: BorderSide(
+                  // цвет рамки и толщина
                   color: Colors.black,
                   width: 1.5,
                 ),
               ),
-              focusedBorder: OutlineInputBorder( // граница фокуса - появляется, когда фокус в поле 
-                borderRadius: BorderRadius.all( // скругляем границы
+              focusedBorder: OutlineInputBorder(
+                // граница фокуса - появляется, когда фокус в поле
+                borderRadius: BorderRadius.all(
+                  // скругляем границы
                   Radius.circular(20.0),
                 ),
-                borderSide: BorderSide( // цвет рамки и толщина
+                borderSide: BorderSide(
+                  // цвет рамки и толщина
                   color: Colors.blue,
                   width: 1.5,
                 ),
@@ -63,20 +69,26 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 Icons.delete_outline,
                 color: Colors.red, // цвет для корзины
               ), // редактирование поля, удаление
-              enabledBorder: OutlineInputBorder( // включенная граница - появляется, когда нет фокуса на поле 
-                borderRadius: BorderRadius.all( // скругляем границы
+              enabledBorder: OutlineInputBorder(
+                // включенная граница - появляется, когда нет фокуса на поле
+                borderRadius: BorderRadius.all(
+                  // скругляем границы
                   Radius.circular(20.0),
                 ),
-                borderSide: BorderSide( // цвет рамки и толщина
+                borderSide: BorderSide(
+                  // цвет рамки и толщина
                   color: Colors.black,
                   width: 1.5,
                 ),
               ),
-              focusedBorder: OutlineInputBorder( // граница фокуса - появляется, когда фокус в поле 
-                borderRadius: BorderRadius.all( // скругляем границы
+              focusedBorder: OutlineInputBorder(
+                // граница фокуса - появляется, когда фокус в поле
+                borderRadius: BorderRadius.all(
+                  // скругляем границы
                   Radius.circular(20.0),
                 ),
-                borderSide: BorderSide( // цвет рамки и толщина
+                borderSide: BorderSide(
+                  // цвет рамки и толщина
                   color: Colors.blue,
                   width: 1.5,
                 ),
@@ -97,6 +109,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 Icons.delete_outline,
                 color: Colors.red,
               ),
+              border: OutlineInputBorder(), // квадратная граница
             ),
           ),
           SizedBox(
@@ -104,15 +117,18 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
           ),
           TextFormField(
             decoration: InputDecoration(
-                labelText: 'Life story',
-                hintText: 'Add your story',
-                prefixIcon: Icon(
-                  Icons.work,
-                ),
-                suffixIcon: Icon(
-                  Icons.delete_outline,
-                  color: Colors.red,
-                )),
+              labelText: 'Life story',
+              hintText: 'Add your story',
+              prefixIcon: Icon(
+                Icons.work,
+              ),
+              suffixIcon: Icon(
+                Icons.delete_outline,
+                color: Colors.red,
+              ),
+              border: OutlineInputBorder(),
+            ),
+            maxLines: 5, // расширяю кол-во вводимых строк в TextFormField
           ),
           SizedBox(
             height: 20.0,
@@ -127,20 +143,26 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 Icons.delete_outline,
                 color: Colors.red, // цвет для корзины
               ), // редактирование поля, удаление
-              enabledBorder: OutlineInputBorder( // включенная граница - появляется, когда нет фокуса на поле 
-                borderRadius: BorderRadius.all( // скругляем границы
+              enabledBorder: OutlineInputBorder(
+                // включенная граница - появляется, когда нет фокуса на поле
+                borderRadius: BorderRadius.all(
+                  // скругляем границы
                   Radius.circular(20.0),
                 ),
-                borderSide: BorderSide( // цвет рамки и толщина
+                borderSide: BorderSide(
+                  // цвет рамки и толщина
                   color: Colors.black,
                   width: 1.5,
                 ),
               ),
-              focusedBorder: OutlineInputBorder( // граница фокуса - появляется, когда фокус в поле 
-                borderRadius: BorderRadius.all( // скругляем границы
+              focusedBorder: OutlineInputBorder(
+                // граница фокуса - появляется, когда фокус в поле
+                borderRadius: BorderRadius.all(
+                  // скругляем границы
                   Radius.circular(20.0),
                 ),
-                borderSide: BorderSide( // цвет рамки и толщина
+                borderSide: BorderSide(
+                  // цвет рамки и толщина
                   color: Colors.blue,
                   width: 1.5,
                 ),
@@ -161,20 +183,26 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 Icons.delete_outline,
                 color: Colors.red, // цвет для корзины
               ), // редактирование поля, удаление
-              enabledBorder: OutlineInputBorder( // включенная граница - появляется, когда нет фокуса на поле 
-                borderRadius: BorderRadius.all( // скругляем границы
+              enabledBorder: OutlineInputBorder(
+                // включенная граница - появляется, когда нет фокуса на поле
+                borderRadius: BorderRadius.all(
+                  // скругляем границы
                   Radius.circular(20.0),
                 ),
-                borderSide: BorderSide( // цвет рамки и толщина
+                borderSide: BorderSide(
+                  // цвет рамки и толщина
                   color: Colors.black,
                   width: 1.5,
                 ),
               ),
-              focusedBorder: OutlineInputBorder( // граница фокуса - появляется, когда фокус в поле 
-                borderRadius: BorderRadius.all( // скругляем границы
+              focusedBorder: OutlineInputBorder(
+                // граница фокуса - появляется, когда фокус в поле
+                borderRadius: BorderRadius.all(
+                  // скругляем границы
                   Radius.circular(20.0),
                 ),
-                borderSide: BorderSide( // цвет рамки и толщина
+                borderSide: BorderSide(
+                  // цвет рамки и толщина
                   color: Colors.blue,
                   width: 1.5,
                 ),
