@@ -137,11 +137,14 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             decoration: InputDecoration(
               labelText: 'Password *',
               prefixIcon: Icon(
-                Icons.person,
+                Icons.security,
               ), // префиксная иконка
-              suffixIcon: Icon(
-                Icons.delete_outline,
-                color: Colors.red, // цвет для корзины
+              suffixIcon: IconButton(
+                icon: Icon(
+                  Icons.visibility,
+                ),
+                onPressed: () {},
+                color: Colors.red, // цвет для иконки глаз
               ), // редактирование поля, удаление
               enabledBorder: OutlineInputBorder(
                 // включенная граница - появляется, когда нет фокуса на поле
@@ -177,12 +180,15 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               labelText: 'Confirm password *',
               hintText: 'Repead your password',
               prefixIcon: Icon(
-                Icons.person,
+                Icons.security,
               ), // префиксная иконка
-              suffixIcon: Icon(
-                Icons.delete_outline,
-                color: Colors.red, // цвет для корзины
-              ), // редактирование поля, удаление
+              suffixIcon: IconButton(
+                icon: Icon(
+                  Icons.visibility,
+                ),
+                onPressed: () {},
+                color: Colors.red, // цвет для иконки глаз
+              ), // редактирование поля, удаление // редактирование поля, удаление
               enabledBorder: OutlineInputBorder(
                 // включенная граница - появляется, когда нет фокуса на поле
                 borderRadius: BorderRadius.all(
