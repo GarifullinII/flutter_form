@@ -20,6 +20,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
           TextField(
             decoration: InputDecoration(
               labelText: 'Full name *',
+              hintText: 'Introduce youreself', // скрытый текст
             ),
           ),
           SizedBox(
