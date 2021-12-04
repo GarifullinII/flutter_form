@@ -31,14 +31,25 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 10.0,
           ),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Phone number *'),
+            decoration: InputDecoration(
+              labelText: 'Phone number *',
+              hintText: 'Add your phone number',
+              prefixIcon: Icon(
+                Icons.phone,
+              ),
+            ),
           ),
           SizedBox(
             // создаем отступ между полями
             height: 10.0,
           ),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Email adress'),
+            decoration: InputDecoration(
+                labelText: 'Email adress',
+                hintText: 'Add your email adress',
+                prefixIcon: Icon(
+                  Icons.email_outlined,
+                )),
           ),
           SizedBox(
             // создаем отступ между полями
