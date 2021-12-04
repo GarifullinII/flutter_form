@@ -26,6 +26,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ), // префиксная иконка
               suffixIcon: Icon(
                 Icons.delete_outline,
+                color: Colors.red,
               ), // редактирование поля, удаление
             ),
           ),
@@ -42,6 +43,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ),
               suffixIcon: Icon(
                 Icons.delete_outline,
+                color: Colors.red,
               ),
             ),
           ),
@@ -57,6 +59,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ),
               suffixIcon: Icon(
                 Icons.delete_outline,
+                color: Colors.red,
               ),
             ),
           ),
@@ -72,6 +75,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 ),
                 suffixIcon: Icon(
                   Icons.delete_outline,
+                  color: Colors.red,
                 )),
           ),
           SizedBox(
@@ -85,6 +89,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ),
               suffixIcon: Icon(
                 Icons.delete_outline,
+                color: Colors.red,
               ),
             ),
           ),
@@ -100,6 +105,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ),
               suffixIcon: Icon(
                 Icons.delete_outline,
+                color: Colors.red,
               ),
             ),
           ),
