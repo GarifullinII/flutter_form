@@ -28,12 +28,21 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 Icons.delete_outline,
                 color: Colors.red, // цвет для корзины
               ), // редактирование поля, удаление
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
+              enabledBorder: OutlineInputBorder( // включенная граница - появляется, когда нет фокуса на поле 
+                borderRadius: BorderRadius.all( // скругляем границы
                   Radius.circular(20.0),
                 ),
-                borderSide: BorderSide(
+                borderSide: BorderSide( // цвет рамки и толщина
                   color: Colors.black,
+                  width: 1.5,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder( // граница фокуса - появляется, когда фокус в поле 
+                borderRadius: BorderRadius.all( // скругляем границы
+                  Radius.circular(20.0),
+                ),
+                borderSide: BorderSide( // цвет рамки и толщина
+                  color: Colors.blue,
                   width: 1.5,
                 ),
               ),
