@@ -26,8 +26,17 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ), // префиксная иконка
               suffixIcon: Icon(
                 Icons.delete_outline,
-                color: Colors.red,
+                color: Colors.red, // цвет для корзины
               ), // редактирование поля, удаление
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20.0),
+                ),
+                borderSide: BorderSide(
+                  color: Colors.black,
+                  width: 1.5,
+                ),
+              ),
             ),
           ),
           SizedBox(
