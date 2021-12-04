@@ -57,11 +57,29 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               labelText: 'Phone number *',
               hintText: 'Add your phone number',
               prefixIcon: Icon(
-                Icons.phone,
-              ),
+                Icons.person,
+              ), // префиксная иконка
               suffixIcon: Icon(
                 Icons.delete_outline,
-                color: Colors.red,
+                color: Colors.red, // цвет для корзины
+              ), // редактирование поля, удаление
+              enabledBorder: OutlineInputBorder( // включенная граница - появляется, когда нет фокуса на поле 
+                borderRadius: BorderRadius.all( // скругляем границы
+                  Radius.circular(20.0),
+                ),
+                borderSide: BorderSide( // цвет рамки и толщина
+                  color: Colors.black,
+                  width: 1.5,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder( // граница фокуса - появляется, когда фокус в поле 
+                borderRadius: BorderRadius.all( // скругляем границы
+                  Radius.circular(20.0),
+                ),
+                borderSide: BorderSide( // цвет рамки и толщина
+                  color: Colors.blue,
+                  width: 1.5,
+                ),
               ),
             ),
           ),
@@ -103,11 +121,29 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             decoration: InputDecoration(
               labelText: 'Password *',
               prefixIcon: Icon(
-                Icons.password,
-              ),
+                Icons.person,
+              ), // префиксная иконка
               suffixIcon: Icon(
                 Icons.delete_outline,
-                color: Colors.red,
+                color: Colors.red, // цвет для корзины
+              ), // редактирование поля, удаление
+              enabledBorder: OutlineInputBorder( // включенная граница - появляется, когда нет фокуса на поле 
+                borderRadius: BorderRadius.all( // скругляем границы
+                  Radius.circular(20.0),
+                ),
+                borderSide: BorderSide( // цвет рамки и толщина
+                  color: Colors.black,
+                  width: 1.5,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder( // граница фокуса - появляется, когда фокус в поле 
+                borderRadius: BorderRadius.all( // скругляем границы
+                  Radius.circular(20.0),
+                ),
+                borderSide: BorderSide( // цвет рамки и толщина
+                  color: Colors.blue,
+                  width: 1.5,
+                ),
               ),
             ),
           ),
@@ -119,11 +155,29 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               labelText: 'Confirm password *',
               hintText: 'Repead your password',
               prefixIcon: Icon(
-                Icons.password_sharp,
-              ),
+                Icons.person,
+              ), // префиксная иконка
               suffixIcon: Icon(
                 Icons.delete_outline,
-                color: Colors.red,
+                color: Colors.red, // цвет для корзины
+              ), // редактирование поля, удаление
+              enabledBorder: OutlineInputBorder( // включенная граница - появляется, когда нет фокуса на поле 
+                borderRadius: BorderRadius.all( // скругляем границы
+                  Radius.circular(20.0),
+                ),
+                borderSide: BorderSide( // цвет рамки и толщина
+                  color: Colors.black,
+                  width: 1.5,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder( // граница фокуса - появляется, когда фокус в поле 
+                borderRadius: BorderRadius.all( // скругляем границы
+                  Radius.circular(20.0),
+                ),
+                borderSide: BorderSide( // цвет рамки и толщина
+                  color: Colors.blue,
+                  width: 1.5,
+                ),
               ),
             ),
           ),
