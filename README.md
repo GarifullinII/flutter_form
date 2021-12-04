@@ -1,5 +1,7 @@
 # flutter_form
 
+![til](./screen.gif)
+
 A new Flutter project.
 
 ## Getting Started
