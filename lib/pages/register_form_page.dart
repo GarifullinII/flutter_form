@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class RegisterFormPage extends StatefulWidget {
   @override
@@ -94,7 +95,10 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 ),
               ),
             ),
-            keyboardType: TextInputType.phone, // задаю числовую раскаладку
+            keyboardType: TextInputType.phone,
+            inputFormatters: [
+              FilteringTextInputFormatter.digitsOnly,
+            ], // ввод только цифр
           ),
           SizedBox(
             height: 10.0,
