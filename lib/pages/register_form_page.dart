@@ -7,7 +7,9 @@ class RegisterFormPage extends StatefulWidget {
 }
 
 class _RegisterFormPageState extends State<RegisterFormPage> {
-  bool _hidePass = true;
+  
+  bool  _hidePassTop = true;
+  bool  _hidePassBot = true;
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +146,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 20.0,
           ),
           TextFormField(
-            obscureText: _hidePass, // скрываю вводимый пароль
+            obscureText:  _hidePassTop, // скрываю вводимый пароль
             maxLength: 9,
             decoration: InputDecoration(
               labelText: 'Password *',
@@ -153,11 +155,11 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ), // префиксная иконка
               suffixIcon: IconButton(
                 icon: Icon(
-                  _hidePass ? Icons.visibility : Icons.visibility_off,
+                  _hidePassTop ? Icons.visibility : Icons.visibility_off,
                 ),
                 onPressed: () { // добавляю setState для изменения состояния иконки глаз
                   setState(() {
-                    _hidePass = !_hidePass;
+                    _hidePassTop = ! _hidePassTop;
                   });
                 },
                 color: Colors.red, // цвет для иконки глаз
@@ -192,7 +194,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 20.0,
           ),
           TextFormField(
-            obscureText: _hidePass, // скрываю вводимый пароль
+            obscureText: _hidePassBot, // скрываю вводимый пароль
             maxLength: 9,
             decoration: InputDecoration(
               labelText: 'Confirm password *',
@@ -202,11 +204,11 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ), // префиксная иконка
               suffixIcon: IconButton(
                 icon: Icon(
-                  _hidePass ? Icons.visibility : Icons.visibility_off,
+                  _hidePassBot ? Icons.visibility : Icons.visibility_off,
                 ),
                 onPressed: () {
                   setState(() {
-                    _hidePass = !_hidePass;
+                    _hidePassBot = !_hidePassBot;
                   });
                 },
                 color: Colors.red, // цвет для иконки глаз
