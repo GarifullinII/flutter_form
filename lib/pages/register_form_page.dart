@@ -7,7 +7,6 @@ class RegisterFormPage extends StatefulWidget {
 }
 
 class _RegisterFormPageState extends State<RegisterFormPage> {
-
   bool _hidePass = true;
 
   @override
@@ -154,9 +153,13 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ), // префиксная иконка
               suffixIcon: IconButton(
                 icon: Icon(
-                  Icons.visibility,
+                  _hidePass ? Icons.visibility : Icons.visibility_off,
                 ),
-                onPressed: () {},
+                onPressed: () { // добавляю setState для изменения состояния иконки глаз
+                  setState(() {
+                    _hidePass = !_hidePass;
+                  });
+                },
                 color: Colors.red, // цвет для иконки глаз
               ), // редактирование поля, удаление
               enabledBorder: OutlineInputBorder(
@@ -199,9 +202,13 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ), // префиксная иконка
               suffixIcon: IconButton(
                 icon: Icon(
-                  Icons.visibility,
+                  _hidePass ? Icons.visibility : Icons.visibility_off,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    _hidePass = !_hidePass;
+                  });
+                },
                 color: Colors.red, // цвет для иконки глаз
               ), // редактирование поля, удаление // редактирование поля, удаление
               enabledBorder: OutlineInputBorder(
