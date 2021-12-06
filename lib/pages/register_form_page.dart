@@ -7,6 +7,9 @@ class RegisterFormPage extends StatefulWidget {
 }
 
 class _RegisterFormPageState extends State<RegisterFormPage> {
+
+  bool _hidePass = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +98,8 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 ),
               ),
             ),
-            keyboardType: TextInputType.phone, // задаю тип клавиатуры - цифровую
+            keyboardType:
+                TextInputType.phone, // задаю тип клавиатуры - цифровую
             inputFormatters: [
               FilteringTextInputFormatter.digitsOnly,
             ], // ввод только цифр
@@ -116,7 +120,8 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ),
               border: OutlineInputBorder(), // квадратная граница
             ),
-            keyboardType: TextInputType.emailAddress, // задаю текстовую клавиатуру
+            keyboardType:
+                TextInputType.emailAddress, // задаю текстовую клавиатуру
           ),
           SizedBox(
             height: 20.0,
@@ -140,7 +145,8 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 20.0,
           ),
           TextFormField(
-            obscureText: true, // скрываю вводимый пароль
+            obscureText: _hidePass, // скрываю вводимый пароль
+            maxLength: 9,
             decoration: InputDecoration(
               labelText: 'Password *',
               prefixIcon: Icon(
@@ -178,13 +184,13 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 ),
               ),
             ),
-
           ),
           SizedBox(
             height: 20.0,
           ),
           TextFormField(
-            obscureText: true,
+            obscureText: _hidePass, // скрываю вводимый пароль
+            maxLength: 9,
             decoration: InputDecoration(
               labelText: 'Confirm password *',
               hintText: 'Repead your password',
