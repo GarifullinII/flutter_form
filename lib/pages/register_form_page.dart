@@ -94,6 +94,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 ),
               ),
             ),
+            keyboardType: TextInputType.phone, // задаю числовую раскаладку
           ),
           SizedBox(
             height: 10.0,
