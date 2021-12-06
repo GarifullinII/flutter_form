@@ -140,6 +140,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 20.0,
           ),
           TextFormField(
+            obscureText: true, // скрываю вводимый пароль
             decoration: InputDecoration(
               labelText: 'Password *',
               prefixIcon: Icon(
@@ -177,11 +178,13 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 ),
               ),
             ),
+
           ),
           SizedBox(
             height: 20.0,
           ),
           TextFormField(
+            obscureText: true,
             decoration: InputDecoration(
               labelText: 'Confirm password *',
               hintText: 'Repead your password',
