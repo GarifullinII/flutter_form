@@ -95,7 +95,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 ),
               ),
             ),
-            keyboardType: TextInputType.phone,
+            keyboardType: TextInputType.phone, // задаю тип клавиатуры - цифровую
             inputFormatters: [
               FilteringTextInputFormatter.digitsOnly,
             ], // ввод только цифр
@@ -116,6 +116,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ),
               border: OutlineInputBorder(), // квадратная граница
             ),
+            keyboardType: TextInputType.emailAddress, // задаю текстовую клавиатуру
           ),
           SizedBox(
             height: 20.0,
