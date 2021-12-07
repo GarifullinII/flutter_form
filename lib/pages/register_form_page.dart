@@ -8,8 +8,10 @@ class RegisterFormPage extends StatefulWidget {
 
 class _RegisterFormPageState extends State<RegisterFormPage> {
   
-  bool  _hidePassTop = true;
-  bool  _hidePassBot = true;
+  bool _hidePassTop = true;
+  bool _hidePassBot = true;
+
+  final _nameController = TextEditingController(); // предоставляю доступ к значению внутри текстового поля
 
   @override
   Widget build(BuildContext context) {
@@ -146,7 +148,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 20.0,
           ),
           TextFormField(
-            obscureText:  _hidePassTop, // скрываю вводимый пароль
+            obscureText: _hidePassTop, // скрываю вводимый пароль
             maxLength: 9,
             decoration: InputDecoration(
               labelText: 'Password *',
@@ -157,9 +159,10 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 icon: Icon(
                   _hidePassTop ? Icons.visibility : Icons.visibility_off,
                 ),
-                onPressed: () { // добавляю setState для изменения состояния иконки глаз
+                onPressed: () {
+                  // добавляю setState для изменения состояния иконки глаз
                   setState(() {
-                    _hidePassTop = ! _hidePassTop;
+                    _hidePassTop = !_hidePassTop;
                   });
                 },
                 color: Colors.red, // цвет для иконки глаз
