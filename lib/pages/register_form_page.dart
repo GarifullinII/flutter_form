@@ -288,8 +288,8 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
 
   void _submitForm() {
     print('Name: ${_nameController.text}');
-    print('Name: ${_phoneController.text}');
-    print('Name: ${_emailController.text}');
-    print('Name: ${_lifeController.text}');
+    print('Phone: ${_phoneController.text}');
+    print('Email: ${_emailController.text}');
+    print('Story: ${_lifeController.text}');
   }
 }
