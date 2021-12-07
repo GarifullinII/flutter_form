@@ -7,11 +7,18 @@ class RegisterFormPage extends StatefulWidget {
 }
 
 class _RegisterFormPageState extends State<RegisterFormPage> {
-  
   bool _hidePassTop = true;
   bool _hidePassBot = true;
 
-  final _nameController = TextEditingController(); // предоставляю доступ к значению внутри текстового поля
+  final _nameController =
+      TextEditingController(); // предоставляю доступ к значению внутри текстового поля (+управление значениями)
+
+  @override
+  void dispose() {
+    // после создания требуется очистить _nameController (после удаления TextEditingController())
+    _nameController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +32,8 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
         padding: EdgeInsets.all(16.0),
         children: [
           TextField(
+            controller:
+                _nameController, // передаю в TextField контроллер для считывания текста
             decoration: InputDecoration(
               labelText: 'Full name *',
               hintText: 'Introduce youreself', // скрытый текст
@@ -246,7 +255,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 10.0,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: _submitForm,
             child: Text(
               'Submit form',
             ),
@@ -260,4 +269,8 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
       )),
     );
   }
+
+  void _submitForm() {
+  print('Name: ${_nameController.text}');
+}
 }
