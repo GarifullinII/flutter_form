@@ -12,21 +12,22 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
 
   final _nameController =
       TextEditingController(); // предоставляю доступ к значению внутри текстового поля (+управление значениями)
-  final _phoneController =
-      TextEditingController(); 
-  final _emailController =
-      TextEditingController(); 
-  final _lifeController =
-      TextEditingController(); 
-  final _passController =
-      TextEditingController();
-  final _confirmController =
-      TextEditingController(); 
+  final _phoneController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _lifeController = TextEditingController();
+  final _passController = TextEditingController();
+  final _confirmController = TextEditingController();
 
   @override
   void dispose() {
     // после создания требуется очистить _nameController (после удаления TextEditingController())
     _nameController.dispose();
+    _phoneController.dispose();
+    _emailController.dispose();
+    _lifeController.dispose();
+    _passController.dispose();
+    _confirmController.dispose();
+
     super.dispose();
   }
 
@@ -170,6 +171,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 20.0,
           ),
           TextFormField(
+            controller: _passController,
             obscureText: _hidePassTop, // скрываю вводимый пароль
             maxLength: 9,
             decoration: InputDecoration(
@@ -219,6 +221,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 20.0,
           ),
           TextFormField(
+            controller: _confirmController,
             obscureText: _hidePassBot, // скрываю вводимый пароль
             maxLength: 9,
             decoration: InputDecoration(
@@ -284,6 +287,9 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   }
 
   void _submitForm() {
-  print('Name: ${_nameController.text}');
-}
+    print('Name: ${_nameController.text}');
+    print('Name: ${_phoneController.text}');
+    print('Name: ${_emailController.text}');
+    print('Name: ${_lifeController.text}');
+  }
 }
