@@ -12,6 +12,16 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
 
   final _nameController =
       TextEditingController(); // предоставляю доступ к значению внутри текстового поля (+управление значениями)
+  final _phoneController =
+      TextEditingController(); 
+  final _emailController =
+      TextEditingController(); 
+  final _lifeController =
+      TextEditingController(); 
+  final _passController =
+      TextEditingController();
+  final _confirmController =
+      TextEditingController(); 
 
   @override
   void dispose() {
@@ -75,6 +85,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 10.0,
           ),
           TextFormField(
+            controller: _phoneController,
             decoration: InputDecoration(
               labelText: 'Phone number *',
               hintText: 'Add your phone number',
@@ -120,6 +131,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 10.0,
           ),
           TextFormField(
+            controller: _emailController,
             decoration: InputDecoration(
               labelText: 'Email adress',
               hintText: 'Add your email adress',
@@ -139,6 +151,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             height: 20.0,
           ),
           TextFormField(
+            controller: _lifeController,
             decoration: InputDecoration(
               labelText: 'Life story',
               hintText: 'Add your story',
