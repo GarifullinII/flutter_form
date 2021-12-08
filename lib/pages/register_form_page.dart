@@ -181,11 +181,11 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 Icons.security,
               ), // префиксная иконка
               suffixIcon: IconButton(
-                icon: Icon(
+                icon: Icon( // когда изменилось значение на противоположное меняем и иконку
                   _hidePassTop ? Icons.visibility : Icons.visibility_off,
                 ),
                 onPressed: () {
-                  // добавляю setState для изменения состояния иконки глаз
+                  // добавляю setState для изменения состояния иконки глаз, при нажатии меняю на противоположное
                   setState(() {
                     _hidePassTop = !_hidePassTop;
                   });
