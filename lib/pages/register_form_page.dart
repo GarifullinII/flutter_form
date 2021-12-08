@@ -42,7 +42,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
           child: ListView(
         padding: EdgeInsets.all(16.0),
         children: [
-          TextField(
+          TextFormField(
             controller:
                 _nameController, // передаю в TextField контроллер для считывания текста
             decoration: InputDecoration(
