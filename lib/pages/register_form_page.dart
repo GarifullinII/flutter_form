@@ -90,6 +90,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             decoration: InputDecoration(
               labelText: 'Phone number *',
               hintText: 'Add your phone number',
+              helperText: 'Phone number: (XXX)XXX-XX-XX',
               prefixIcon: Icon(
                 Icons.person,
               ), // префиксная иконка
