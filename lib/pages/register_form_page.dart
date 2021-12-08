@@ -167,6 +167,9 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               border: OutlineInputBorder(),
             ),
             maxLines: 5, // расширяю кол-во вводимых строк в TextFormField
+            inputFormatters: [ // валидация - проверка длины строки
+              LengthLimitingTextInputFormatter(100), 
+            ],
           ),
           SizedBox(
             height: 20.0,
