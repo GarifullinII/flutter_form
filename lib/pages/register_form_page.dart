@@ -312,12 +312,16 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
     // через _formKey обращаемся к state и проверяем проходит ли проверку поля ввода, если есть функции в поях в значении validator
     // если в полях нет ошибок, то будет true и выведем сообщение 'Form is valid' те все методы проверки должны вернуть значение null
     if (_formKey.currentState!.validate()) {
+      // если прошла валидацию, то сохраняем данные в state
+      _formKey.currentState?.save();
       print('Form is valid');
+      print('Name: ${_nameController.text}');
+      print('Phone: ${_phoneController.text}');
+      print('Email: ${_emailController.text}');
+      print('Story: ${_lifeController.text}');
+    } else {
+      print('Form is not valid! Please review and correct!');
     }
-    print('Name: ${_nameController.text}');
-    print('Phone: ${_phoneController.text}');
-    print('Email: ${_emailController.text}');
-    print('Story: ${_lifeController.text}');
   }
 
   String? _validateName(value) {

@@ -1,8 +1,8 @@
 # flutter_form
 
+## Form validation
 ![til](./screen.gif)
 
-![til](./screen_two.gif)
 
 A new Flutter project.
 
