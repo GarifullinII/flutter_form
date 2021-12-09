@@ -84,7 +84,8 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                     ),
                   ),
                 ),
-                validator: (val) => val!.isEmpty ? 'Name is required' : null,
+                validator: _validateName,
+                // validator: (val) => val!.isEmpty ? 'Name is required' : null,
                 // добавляю валидатор, проверяю поле на заполняемость, если поле пустое val!.isEmpty, то возвращаю текст, что надо ввести данные
                 // чтобы валидация выполнилась необходимо у Form реализовать параметр key
               ),
@@ -309,5 +310,16 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
     print('Phone: ${_phoneController.text}');
     print('Email: ${_emailController.text}');
     print('Story: ${_lifeController.text}');
+  }
+
+  String? _validateName(val) { // принимает value (val) из валидатора
+    final _nameExp = RegExp(r'^[A-Za-z]+$'); // вводим регулярное выражение, чтобы пользователь мог только ввести символы A-Za-z
+    if (val.isEmpty) {
+      return 'Name is required';
+    } else if (_nameExp.hasMatch(val)) { // если введен текст не такой, как задали в регулярном выражении, то вывожу 'Please enter correct full name'
+      return 'Please enter only letters';
+    } else {
+      return null;
+    }
   }
 }
