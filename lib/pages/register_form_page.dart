@@ -191,6 +191,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ),
               TextFormField(
                 controller: _passController,
+                validator: _validatePassword,
                 obscureText: _hidePassTop, // скрываю вводимый пароль
                 maxLength: 9,
                 decoration: InputDecoration(
@@ -242,6 +243,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               ),
               TextFormField(
                 controller: _confirmController,
+                validator: _validatePassword,
                 obscureText: _hidePassBot, // скрываю вводимый пароль
                 maxLength: 9,
                 decoration: InputDecoration(
@@ -342,6 +344,16 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
       return 'Email cannot be empty';
     } else if (!_emailController.text.contains('@')) {
       return 'Invalid email address';
+    } else {
+      return null;
+    }
+  }
+
+  String? _validatePassword(value) {
+    if (_passController.text.length != 9) {
+      return '9 character required for password';
+    } else if (_confirmController.text != _passController.text) {
+      return 'Password does not match';
     } else {
       return null;
     }
