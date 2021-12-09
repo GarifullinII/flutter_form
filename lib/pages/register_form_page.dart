@@ -161,6 +161,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 ),
                 keyboardType:
                     TextInputType.emailAddress, // задаю текстовую клавиатуру
+                validator: _validateEmail,
               ),
               SizedBox(
                 height: 20.0,
@@ -334,5 +335,15 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   bool _validatePhoneNumber(String input) {
     final _phoneExp = RegExp(r'^\(\d\d\d\)\d\d\d\-\d\d\-\d\d$');
     return _phoneExp.hasMatch(input);
+  }
+
+  String? _validateEmail(value) {
+    if (value.isEmpty) {
+      return 'Email cannot be empty';
+    } else if (!_emailController.text.contains('@')) {
+      return 'Invalid email address';
+    } else {
+      return null;
+    }
   }
 }
