@@ -197,6 +197,9 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                   });
                 },
                 value: _selectedCountry,
+                validator: (val) {
+                  return val == null ? 'Please select a country' : null;
+                },
               ),
               SizedBox(
                 height: 20.0,
