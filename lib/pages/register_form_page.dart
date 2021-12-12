@@ -21,6 +21,18 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   final _passController = TextEditingController();
   final _confirmController = TextEditingController();
 
+  List<String> _countries = [
+    'UAE',
+    'Montenegro',
+    'England',
+    'Cuba',
+    'Vietnam',
+    'Spain',
+    'Tunisia',
+    'Czech Republic'
+  ];
+  String? _selectedCountry;
+
   @override
   void dispose() {
     // после создания требуется очистить _nameController (после удаления TextEditingController())
@@ -162,6 +174,29 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 keyboardType:
                     TextInputType.emailAddress, // задаю текстовую клавиатуру
                 validator: _validateEmail,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              DropdownButtonFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  icon: Icon(Icons.map),
+                  labelText: 'Country?',
+                ),
+                items: _countries.map((country) {
+                  return DropdownMenuItem(
+                    child: Text(country),
+                    value: country,
+                  );
+                }).toList(),
+                onChanged: (data) {
+                  print(data);
+                  setState(() {
+                    _selectedCountry = data as String;
+                  });
+                },
+                value: _selectedCountry,
               ),
               SizedBox(
                 height: 20.0,
