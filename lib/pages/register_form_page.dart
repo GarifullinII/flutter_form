@@ -356,6 +356,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
       print('Name: ${_nameController.text}');
       print('Phone: ${_phoneController.text}');
       print('Email: ${_emailController.text}');
+      print('Country: ${_selectedCountry}');
       print('Story: ${_lifeController.text}');
     } else {
       print('Form is not valid! Please review and correct!');
