@@ -56,7 +56,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
       BuildContext context, FocusNode currentFocus, FocusNode nextFocus) {
     currentFocus.unfocus(); // расфокусирую текстовое поле
     FocusScope.of(context)
-        .requestFocus(nextFocus); // передача фокуса дргому фокусу
+        .requestFocus(nextFocus); // передача фокуса другому фокусу
   }
 
   @override
