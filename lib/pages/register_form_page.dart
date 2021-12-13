@@ -33,6 +33,10 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   ];
   String? _selectedCountry;
 
+  final _nameFocus = FocusNode();
+  final _phoneFocus = FocusNode();
+  final _passwordFocus = FocusNode();
+
   @override
   void dispose() {
     // после создания требуется очистить _nameController (после удаления TextEditingController())
@@ -42,8 +46,17 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
     _lifeController.dispose();
     _passController.dispose();
     _confirmController.dispose();
-
+    _nameFocus.dispose();
+    _phoneFocus.dispose();
+    _passwordFocus.dispose();
     super.dispose();
+  }
+
+  void _fieldFocusChange(
+      BuildContext context, FocusNode currentFocus, FocusNode nextFocus) {
+    currentFocus.unfocus(); // расфокусирую текстовое поле
+    FocusScope.of(context)
+        .requestFocus(nextFocus); // передача фокуса дргому фокусу
   }
 
   @override
@@ -59,6 +72,11 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
             padding: EdgeInsets.all(16.0),
             children: [
               TextFormField(
+                focusNode: _nameFocus,
+                autofocus: true,
+                onFieldSubmitted: (_) {
+                  _fieldFocusChange(context, _nameFocus, _phoneFocus);
+                },
                 controller:
                     _nameController, // передаю в TextField контроллер для считывания текста
                 decoration: InputDecoration(
@@ -106,6 +124,10 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 height: 10.0,
               ),
               TextFormField(
+                focusNode: _phoneFocus,
+                onFieldSubmitted: (_) {
+                  _fieldFocusChange(context, _phoneFocus, _passwordFocus);
+                },
                 controller: _phoneController,
                 decoration: InputDecoration(
                   labelText: 'Phone number *',
@@ -228,6 +250,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 height: 20.0,
               ),
               TextFormField(
+                focusNode: _passwordFocus,
                 controller: _passController,
                 validator: _validatePassword,
                 obscureText: _hidePassTop, // скрываю вводимый пароль
