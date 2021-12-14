@@ -11,10 +11,10 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   bool _hidePassBot = true;
 
   final _formKey =
-    GlobalKey<FormState>(); // FormState - встроенный класс для работы с Form
+      GlobalKey<FormState>(); // FormState - встроенный класс для работы с Form
 
-  final _scaffoldKey = 
-    GlobalKey<ScaffoldState>(); // глобальный ключ для реализации метода SnackBar
+  final _scaffoldKey = GlobalKey<
+      ScaffoldState>(); // глобальный ключ для реализации метода SnackBar
 
   final _nameController =
       TextEditingController(); // предоставляю доступ к значению внутри текстового поля (+управление значениями)
@@ -386,7 +386,9 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
       print('Country: ${_selectedCountry}');
       print('Story: ${_lifeController.text}');
     } else {
-      _showMessage(message: 'Form is not valid! Please review and correct!'); // метод о не валидности формы 
+      _showMessage(
+          message:
+              'Form is not valid! Please review and correct!'); // метод о не валидности формы
     }
   }
 
@@ -429,17 +431,15 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
     }
   }
 
-  void _showMessage({required String message}) { // метод невалидности формы
-    _scaffoldKey.currentState?.showSnackBar(
+  void _showMessage({required String message}) {
+    ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        duration: Duration(
-          seconds: 5, // время отображения всплывающего уведомления
-        ),
+        duration: Duration(seconds: 5),
         backgroundColor: Colors.red,
         content: Text(
           message,
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.w600,
             fontSize: 18.0,
           ),
@@ -448,5 +448,23 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
     );
   }
 
+  // void _showMessage({required String message}) { // метод невалидности формы
+  //   _scaffoldKey.currentState?.showSnackBar(
+  //     SnackBar(
+  //       duration: Duration(
+  //         seconds: 5, // время отображения всплывающего уведомления
+  //       ),
+  //       backgroundColor: Colors.red,
+  //       content: Text(
+  //         message,
+  //         style: TextStyle(
+  //           color: Colors.black,
+  //           fontWeight: FontWeight.w600,
+  //           fontSize: 18.0,
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
 }
