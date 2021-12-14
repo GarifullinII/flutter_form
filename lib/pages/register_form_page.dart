@@ -11,7 +11,10 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   bool _hidePassBot = true;
 
   final _formKey =
-      GlobalKey<FormState>(); // FormState - встроенный класс для работы с Form
+    GlobalKey<FormState>(); // FormState - встроенный класс для работы с Form
+
+  final _scaffoldKey = 
+    GlobalKey<ScaffoldState>(); // глобальный ключ для реализации метода SnackBar
 
   final _nameController =
       TextEditingController(); // предоставляю доступ к значению внутри текстового поля (+управление значениями)
@@ -62,6 +65,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text('Register form'),
         centerTitle: true,
@@ -382,7 +386,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
       print('Country: ${_selectedCountry}');
       print('Story: ${_lifeController.text}');
     } else {
-      print('Form is not valid! Please review and correct!');
+      _showMessage(message: 'Form is not valid! Please review and correct!'); // метод о не валидности формы 
     }
   }
 
@@ -424,4 +428,25 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
       return null;
     }
   }
+
+  void _showMessage({required String message}) { // метод невалидности формы
+    _scaffoldKey.currentState?.showSnackBar(
+      SnackBar(
+        duration: Duration(
+          seconds: 5, // время отображения всплывающего уведомления
+        ),
+        backgroundColor: Colors.red,
+        content: Text(
+          message,
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+            fontSize: 18.0,
+          ),
+        ),
+      ),
+    );
+  }
+
+
 }
