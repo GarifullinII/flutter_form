@@ -201,9 +201,14 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                   prefixIcon: Icon(
                     Icons.email_outlined,
                   ),
-                  suffixIcon: Icon(
-                    Icons.delete_outline,
-                    color: Colors.red,
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      _emailController.clear();
+                    },
+                    child: Icon(
+                      Icons.delete_outline,
+                      color: Colors.red,
+                    ),
                   ),
                   border: OutlineInputBorder(), // квадратная граница
                 ),
