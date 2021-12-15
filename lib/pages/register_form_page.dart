@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_form/model/user.dart';
 
 class RegisterFormPage extends StatefulWidget {
   @override
@@ -39,6 +40,8 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   final _nameFocus = FocusNode();
   final _phoneFocus = FocusNode();
   final _passwordFocus = FocusNode();
+
+  User newUser = User();
 
   @override
   void dispose() {
@@ -89,8 +92,10 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                   prefixIcon: Icon(
                     Icons.person,
                   ), // префиксная иконка
-                  suffixIcon: GestureDetector( // ввожу виджет для очистки поля при нажатии на корзину
-                    onTap: () { // call back при нажатии на иконку Корзина будет произведена очистка формы
+                  suffixIcon: GestureDetector(
+                    // ввожу виджет для очистки поля при нажатии на корзину
+                    onTap: () {
+                      // call back при нажатии на иконку Корзина будет произведена очистка формы
                       _nameController.clear();
                     },
                     child: Icon(
@@ -124,6 +129,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                   ),
                 ),
                 validator: _validateName,
+                onSaved: (value) => newUser.name = value!,
                 // validator: (val) => val!.isEmpty ? 'Name is required' : null,
                 // добавляю валидатор, проверяю поле на заполняемость, если поле пустое val!.isEmpty, то возвращаю текст, что надо ввести данные
                 // чтобы валидация выполнилась необходимо у Form реализовать параметр key
@@ -189,6 +195,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 validator: (value) => _validatePhoneNumber(value!)
                     ? null
                     : 'Phone number must be entered as (###)###-##-##',
+                onSaved: (value) => newUser.phone = value!,
               ),
               SizedBox(
                 height: 10.0,
@@ -215,6 +222,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 keyboardType:
                     TextInputType.emailAddress, // задаю текстовую клавиатуру
                 validator: _validateEmail,
+                onSaved: (value) => newUser.name = value!,
               ),
               SizedBox(
                 height: 20.0,
@@ -231,10 +239,11 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                     value: country,
                   );
                 }).toList(),
-                onChanged: (data) {
-                  print(data);
+                onChanged: (country) {
+                  print(country);
                   setState(() {
-                    _selectedCountry = data as String;
+                    _selectedCountry = country as String;
+                    newUser.country = country;
                   });
                 },
                 value: _selectedCountry,
@@ -269,6 +278,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                   // валидация - проверка длины строки
                   LengthLimitingTextInputFormatter(100),
                 ],
+                onSaved: (value) => newUser.story = value!,
               ),
               SizedBox(
                 height: 20.0,
