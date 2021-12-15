@@ -379,7 +379,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
     if (_formKey.currentState!.validate()) {
       // если прошла валидацию, то сохраняем данные в state
       _formKey.currentState?.save();
-      print('Form is valid');
+      _showDialog(name: _nameController.text); // когда форма заполнена отображаю диалоговое окно, в качестве параметра ввожу имя, которое ввел пользователь
       print('Name: ${_nameController.text}');
       print('Phone: ${_phoneController.text}');
       print('Email: ${_emailController.text}');
@@ -467,4 +467,39 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   //   );
   // }
 
+  void _showDialog({required String name}) { // метод ничего не возрващает, принимает String name
+    showDialog( // метод имеет контекст
+      context: context,
+      builder: (context) { // метод принимает context, возвращает AlertDialog
+        return AlertDialog(
+          title: Text( // задаю title
+            'Registration successful',
+            style: TextStyle(
+              color: Colors.green,
+            ),
+          ),
+          content: Text( // параметр content
+            '$name is now a verified register form',
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 18.0,
+            ),
+          ),
+          actions: [ // реализую кнопку в параметре actions
+            TextButton(
+                onPressed: () {
+                  Navigator.pop(context); // при нажатии на кнопку6 возвращаюсь на мою форму
+                },
+                child: Text( // название кнопки 
+                  'verifiend',
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 18.0,
+                  ),
+                )),
+          ],
+        );
+      },
+    );
+  }
 }
