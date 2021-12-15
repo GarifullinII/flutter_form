@@ -9,6 +9,7 @@ class UserInfoPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Card(
+        margin: EdgeInsets.all(16.0),
         child: Column(
           children: [
             ListTile(
@@ -39,7 +40,7 @@ class UserInfoPage extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
               leading: Icon(
-                Icons.phone,
+                Icons.mail,
                 color: Colors.black,
               ),
             ),
