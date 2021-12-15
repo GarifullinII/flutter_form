@@ -145,9 +145,14 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                   prefixIcon: Icon(
                     Icons.person,
                   ), // префиксная иконка
-                  suffixIcon: Icon(
-                    Icons.delete_outline,
-                    color: Colors.red, // цвет для корзины
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      _phoneController.clear();
+                    },
+                    child: Icon(
+                      Icons.delete_outline,
+                      color: Colors.red, // цвет для корзины
+                    ),
                   ), // редактирование поля, удаление
                   enabledBorder: OutlineInputBorder(
                     // включенная граница - появляется, когда нет фокуса на поле
