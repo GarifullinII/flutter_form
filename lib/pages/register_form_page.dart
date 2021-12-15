@@ -253,9 +253,14 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                   prefixIcon: Icon(
                     Icons.work,
                   ),
-                  suffixIcon: Icon(
-                    Icons.delete_outline,
-                    color: Colors.red,
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      _lifeController.clear();
+                    },
+                    child: Icon(
+                      Icons.delete_outline,
+                      color: Colors.red,
+                    ),
                   ),
                   border: OutlineInputBorder(),
                 ),
