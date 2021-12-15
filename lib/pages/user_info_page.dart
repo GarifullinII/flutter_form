@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form/model/user.dart';
 
 class UserInfoPage extends StatelessWidget {
+  late User userInfo;
+
+  UserInfoPage({required this.userInfo});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('user info'),
+        title: Text('User info'),
         centerTitle: true,
       ),
       body: Card(
@@ -14,19 +19,19 @@ class UserInfoPage extends StatelessWidget {
           children: [
             ListTile(
               title: Text(
-                'Name',
+                '${userInfo.name}',
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
-              subtitle: Text('Story'),
+              subtitle: Text('${userInfo.story}'),
               leading: Icon(
                 Icons.person,
                 color: Colors.black,
               ),
-              trailing: Text('Country'),
+              trailing: Text('${userInfo.country}'),
             ),
             ListTile(
               title: Text(
-                'Phone',
+                '${userInfo.phone}',
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
               leading: Icon(
@@ -36,7 +41,7 @@ class UserInfoPage extends StatelessWidget {
             ),
             ListTile(
               title: Text(
-                'Email',
+                '${userInfo.email}',
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
               leading: Icon(

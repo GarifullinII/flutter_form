@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_form/model/user.dart';
+import 'package:flutter_form/pages/user_info_page.dart';
 
 class RegisterFormPage extends StatefulWidget {
   @override
@@ -528,6 +529,12 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 onPressed: () {
                   Navigator.pop(
                       context); // при нажатии на кнопку6 возвращаюсь на мою форму
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => UserInfoPage(
+                      userInfo: newUser,
+                    )),
+                  );
                 },
                 child: Text(
                   // название кнопки
