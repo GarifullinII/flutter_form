@@ -89,9 +89,14 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                   prefixIcon: Icon(
                     Icons.person,
                   ), // префиксная иконка
-                  suffixIcon: Icon(
-                    Icons.delete_outline,
-                    color: Colors.red, // цвет для корзины
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      _nameController.clear();
+                    },
+                    child: Icon(
+                      Icons.delete_outline,
+                      color: Colors.red, // цвет для корзины
+                    ),
                   ), // редактирование поля, удаление
                   enabledBorder: OutlineInputBorder(
                     // включенная граница - появляется, когда нет фокуса на поле
@@ -379,7 +384,9 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
     if (_formKey.currentState!.validate()) {
       // если прошла валидацию, то сохраняем данные в state
       _formKey.currentState?.save();
-      _showDialog(name: _nameController.text); // когда форма заполнена отображаю диалоговое окно, в качестве параметра ввожу имя, которое ввел пользователь
+      _showDialog(
+          name: _nameController
+              .text); // когда форма заполнена отображаю диалоговое окно, в качестве параметра ввожу имя, которое ввел пользователь
       print('Name: ${_nameController.text}');
       print('Phone: ${_phoneController.text}');
       print('Email: ${_emailController.text}');
@@ -467,30 +474,38 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   //   );
   // }
 
-  void _showDialog({required String name}) { // метод ничего не возрващает, принимает String name
-    showDialog( // метод имеет контекст
+  void _showDialog({required String name}) {
+    // метод ничего не возрващает, принимает String name
+    showDialog(
+      // метод имеет контекст
       context: context,
-      builder: (context) { // метод принимает context, возвращает AlertDialog
+      builder: (context) {
+        // метод принимает context, возвращает AlertDialog
         return AlertDialog(
-          title: Text( // задаю title
+          title: Text(
+            // задаю title
             'Registration successful',
             style: TextStyle(
               color: Colors.green,
             ),
           ),
-          content: Text( // параметр content
+          content: Text(
+            // параметр content
             '$name is now a verified register form',
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 18.0,
             ),
           ),
-          actions: [ // реализую кнопку в параметре actions
+          actions: [
+            // реализую кнопку в параметре actions
             TextButton(
                 onPressed: () {
-                  Navigator.pop(context); // при нажатии на кнопку6 возвращаюсь на мою форму
+                  Navigator.pop(
+                      context); // при нажатии на кнопку6 возвращаюсь на мою форму
                 },
-                child: Text( // название кнопки 
+                child: Text(
+                  // название кнопки
                   'verifiend',
                   style: TextStyle(
                     color: Colors.green,
