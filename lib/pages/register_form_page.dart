@@ -89,8 +89,8 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                   prefixIcon: Icon(
                     Icons.person,
                   ), // префиксная иконка
-                  suffixIcon: GestureDetector(
-                    onTap: () {
+                  suffixIcon: GestureDetector( // ввожу виджет для очистки поля при нажатии на корзину
+                    onTap: () { // call back при нажатии на иконку Корзина будет произведена очистка формы
                       _nameController.clear();
                     },
                     child: Icon(
