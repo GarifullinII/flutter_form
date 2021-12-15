@@ -254,7 +254,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                     Icons.work,
                   ),
                   suffixIcon: GestureDetector(
-                    onTap: () {
+                    onLongPress: () {
                       _lifeController.clear();
                     },
                     child: Icon(
