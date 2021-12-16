@@ -1,7 +1,7 @@
 class User {
-  late String name;
-  late String phone;
-  late String email;
-  late String country;
-  late String story;
+  String ?name;
+  String ?phone;
+  String ?email;
+  String ?country;
+  String ?story;
 }
